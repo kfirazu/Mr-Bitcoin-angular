@@ -14,7 +14,6 @@ export class ContactListComponent implements OnInit {
   }
 
   @Input() contacts!: Contact[]
-  @Output() selectedContactId = new EventEmitter<string>()
   @Output() remove = new EventEmitter<string>()
 
 

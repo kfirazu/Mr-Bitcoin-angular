@@ -13,6 +13,7 @@ import { ContactEditComponent } from './pages/contact-edit/contact-edit.componen
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { FormsModule } from '@angular/forms';
+import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     ContactDetailsComponent,
     ContactEditComponent,
     HomePageComponent,
-    ContactComponent
+    ContactComponent,
+    AppHeaderComponent
   ],
   imports: [
     BrowserModule,

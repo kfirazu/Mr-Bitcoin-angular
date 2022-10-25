@@ -3,9 +3,6 @@ import { Observable, BehaviorSubject, of, throwError } from 'rxjs';
 import { Contact } from '../models/contact.model';
 import { ContactFilter } from 'src/app/models/contact.model';
 
-
-
-
 const CONTACTS = [
     {
         "_id": "5a56640269f443a5d64b32ca",
@@ -169,7 +166,7 @@ export class ContactService {
         this._contacts$.next(this._contactsDb)
     }
 
-    public saveContact(contact: Contact) {
+    public saveContact(contact: Contact): any {
         return contact._id ? this._updateContact(contact) : this._addContact(contact)
     }
 
@@ -199,6 +196,10 @@ export class ContactService {
 
             return 0;
         })
+    }
+
+    public getEmptyContact(){
+        return {name: '', email: '', phone: ''}
     }
 
     public setFilter(filterBy: ContactFilter){

@@ -1,14 +1,13 @@
-<section (click)="selectedContactId.emit(contact._id)" class="contact-preview">
-    <img src="https://joeschmoe.io/api/v1/${{contact._id}}@ashallendesign.co.uk" />
+<section [routerLink]="['/contact', contact._id]" class="contact-preview">
     <div class="info-container">
+        <img src="https://joeschmoe.io/api/v1/${{contact._id}}@ashallendesign.co.uk" />
         <h2 class="info">{{ contact.name }}</h2>
         <h2 class="info">{{ contact.phone }}</h2>
     </div>
     <div class="actions">
         <button class="btn btn-primary">Details</button>
-        <button class="btn btn-primary">Edit</button>
+        <button (click)="onEditContact($event)" class="btn btn-primary">Edit</button>
         <button (click)="onRemoveContact()" class="btn btn-primary">Delete</button>
-
     </div>
 
 </section>

@@ -1,5 +1,6 @@
 <section class="contact">
     <contact-filter></contact-filter>
-    <contact-list (selectedContactId)="onSelectContactId($event)" [contacts]="(contacts$|async)!" (remove)="onRemoveContact($event)"></contact-list>
-    <contact-details [contactId]="selectedContactId" *ngIf="selectedContactId"></contact-details>
+    <a routerLink="edit">Add contact</a>
+    <contact-list [contacts]="(contacts$|async)!" (remove)="onRemoveContact($event)"></contact-list>
 </section>
+<router-outlet></router-outlet>

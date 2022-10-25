@@ -16,7 +16,7 @@ export class ContactComponent implements OnInit {
   contacts!: Contact[]
   contacts$!: Observable<Contact[]>
   subscription!: Subscription
-  selectedContactId = ''
+  // selectedContactId = ''
 
 
   ngOnInit(): void {
@@ -24,10 +24,10 @@ export class ContactComponent implements OnInit {
     this.contacts$ = this.ContactService.contacts$
   }
 
-  onSelectContactId(contactId: string){
-    console.log('contactId:', contactId)
-    this.selectedContactId = contactId
-  }
+  // onSelectContactId(contactId: string){
+  //   console.log('contactId:', contactId)
+  //   this.selectedContactId = contactId
+  // }
 
   onRemoveContact(contactId: string) {
     // console.log('contactId from contact page:', contactId)
@@ -35,5 +35,3 @@ export class ContactComponent implements OnInit {
   }
 
 }
-
-// renders contact list, gets contacts from service
