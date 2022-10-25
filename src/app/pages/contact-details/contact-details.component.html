@@ -1,0 +1,8 @@
+<section *ngIf="contact" class="contact-details">
+    <img src="https://joeschmoe.io/api/v1/${{contact._id}}@ashallendesign.co.uk" />
+    <div class="info-container">
+        <h3 class="info">{{contact.name}}</h3>
+        <h3 class="info">{{contact.phone}}</h3>
+        <h3 class="info">{{contact.email}}</h3>
+    </div>
+</section>
