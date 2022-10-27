@@ -24,8 +24,9 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
 
   async ngOnInit(): Promise<void> {
     this.paramsSubscription = this.route.data.subscribe(data => {
+      console.log('data:', data)
       const contact = data['contact']
-      if(contact) this.contact = contact
+      if (contact) this.contact = contact
     })
   }
 
@@ -39,6 +40,17 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
 
   onBack() {
     this.router.navigate(['/contact'])
+  }
+
+  onRemoveContact(contactId: string) {
+    this.contactService.deleteContact(contactId)
+    this.router.navigateByUrl('/contact')
+
+  }
+
+  onEditContact(ev: MouseEvent){
+    // ev.stopPropagation()
+    this.router.navigate(['edit', this.contact._id])
   }
 
   ngOnDestroy(): void {

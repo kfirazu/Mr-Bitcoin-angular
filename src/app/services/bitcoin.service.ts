@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, of } from 'rxjs';
-import { storageService } from './storage.service';
+import { StorageService } from './storage.service';
 
 
 @Injectable({
@@ -11,10 +11,10 @@ export class BitcoinService {
 
   KEY: string = 'rateDB'
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private storageService: StorageService) { }
 
   public getRate() {
-    let btcRate = storageService.loadFromStorage(this.KEY)
+    let btcRate = this.storageService.loadFromStorage(this.KEY)
     // console.log('btcRate:', btcRate)
     // if (btcRate) {
     //   console.log('From storage')
@@ -26,7 +26,7 @@ export class BitcoinService {
       )
     btcRate = result
 
-    storageService.saveToStorage(this.KEY, btcRate)
+    this.storageService.saveToStorage(this.KEY, btcRate)
     return result
   }
 

@@ -14,6 +14,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AppHeaderComponent } from './cmps/app-header/app-header.component';
     ContactEditComponent,
     HomePageComponent,
     ContactComponent,
-    AppHeaderComponent
+    AppHeaderComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

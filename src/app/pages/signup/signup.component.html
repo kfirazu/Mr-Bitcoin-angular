@@ -1,0 +1,7 @@
+<section class="singup">
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+        <Label for="username">Username</Label>
+        <input [(ngModel)]="username" type="text" name="username" id="username" placeholder="Enter username">
+        <button>Signup</button>
+    </form>
+</section>

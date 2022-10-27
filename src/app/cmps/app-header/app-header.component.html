@@ -1,8 +1,11 @@
 <header class="app-header">
-    <h2 class="logo">Mr-Bitcoin</h2>
+    <span class="logo">
+        <a routerLink="/"> Mr-Bitcoin</a></span>
     <nav class="links-container">
         <a routerLink="/" >Home</a>
-        <a routerLink="/contact">Contacts</a>
+        <a routerLink="contact">Contacts</a>
+        <a routerLink="signup">Signup</a>
         <a >Charts</a>
+        <a (click)="onLogout()">Logout</a>
     </nav>
 </header>

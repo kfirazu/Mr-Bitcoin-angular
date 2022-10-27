@@ -180,7 +180,7 @@ export class ContactService {
     private _addContact(contact: Contact) {
         //mock the server work
         const newContact = new Contact(contact.name, contact.email, contact.phone);
-        if (typeof newContact.setId === 'function') newContact.setId(getRandomId());
+        if (typeof newContact.setId === 'function') newContact.setId(this.getRandomId());
         this._contactsDb.push(newContact)
         this._contacts$.next(this._sort(this._contactsDb))
     }
@@ -215,15 +215,15 @@ export class ContactService {
                 contact.email.toLocaleLowerCase().includes(term)
         })
     }
-}
+    
 
-
-function getRandomId(length = 8): string {
-    let result = '';
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    for (var i = 0; i < length; i++) {
-        result += characters.charAt(Math.floor(Math.random() *
+    public getRandomId(length = 8): string {
+        let result = '';
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        for (var i = 0; i < length; i++) {
+            result += characters.charAt(Math.floor(Math.random() *
             characters.length));
+        }
+        return result;
     }
-    return result;
 }

@@ -1,14 +1,17 @@
-export const storageService = {
-    loadFromStorage,
-    saveToStorage
-}
+import { Injectable } from '@angular/core';
 
-function saveToStorage(entityType: string, entities: any) {
-    localStorage.setItem(entityType, JSON.stringify(entities))
-}
+@Injectable({
+  providedIn: 'root'
+})
+export class StorageService {
 
-function loadFromStorage(key: string) {
-    var val: any = localStorage.getItem(key)
-    return JSON.parse(val)
-}
+  constructor() { }
 
+  public saveToStorage<T>(key: string, value: T) {
+    localStorage.setItem(key, JSON.stringify(value))
+  }
+  public loadFromStorage(key: string) {
+    let data = localStorage.getItem(key)
+    return data ? JSON.parse(data) : undefined
+  }
+}

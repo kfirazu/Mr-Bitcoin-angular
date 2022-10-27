@@ -7,5 +7,9 @@
     </div>
     <div class="actions">
         <button class="btn btn-back" (click)="onBack()">Back</button>
+        <button class="btn btn-remove" (click)="onRemoveContact(contact._id!)">Delete</button>
+        <button (click)="onEditContact($event)" class="btn btn-primary">Edit</button>
+
+
     </div>
 </section>
