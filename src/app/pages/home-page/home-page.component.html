@@ -3,5 +3,9 @@
         <h1 *ngIf="user">Hello, {{user.name}}</h1>
         <h3>Your balance is:₿ {{user.balance}} </h3>
         <h3>Current BTC rate in USD: ${{rate}}</h3>
+        <div class="transactions" *ngIf="transactions">
+            <h3>Recent transactions: </h3>
+        </div>
+        <transaction-list [transactions]="transactions"></transaction-list>
     </div>
 </section>

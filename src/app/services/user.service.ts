@@ -4,6 +4,7 @@ import { User } from '../models/user.model';
 import { StorageService } from './storage.service';
 import { UtilService } from './util.service';
 import { ContactService } from 'src/app/services/contact.service';
+import { Contact } from '../models/contact.model';
 
 @Injectable({
   providedIn: 'root'
@@ -55,6 +56,22 @@ export class UserService {
 
   public logout() {
     this.storageService.saveToStorage('loggedInUser', null)
+  }
+
+  public transferFunds(amount: number, contact: Contact) {
+    const user = this.getUser()
+    user.balance -= amount
+
+    const transaction = {
+      id: this.contactService.getRandomId(),
+      toId: contact._id,
+      to: contact.name,
+      at: Date.now(),
+      amount
+    }
+
+    user.transactions.unshift(transaction)
+    this.storageService.saveToStorage('loggedInUser', user)
   }
 
 }

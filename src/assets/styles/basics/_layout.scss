@@ -10,11 +10,16 @@
         grid-column: 1 / -1;
     }
 
-    > *:not(.full) {
-        display: grid;
-        grid-auto-flow: dense;
-        grid-template-columns: repeat( 6, 1fr );
-    }
+    // > *:not(.full) {
+    //     display: grid;
+    //     grid-auto-flow: dense;
+    //     grid-template-columns: repeat( 6, 1fr );
+    // }
+
+    // .list-layout {
+    //     display: grid;
+    //     grid-template-columns: repeat((5, 1fr))
+    // }
 
     @include for-narrow-layout {
         @include layoutGTC($break-narrow);

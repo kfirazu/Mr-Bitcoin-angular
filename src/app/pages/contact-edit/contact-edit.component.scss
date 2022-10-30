@@ -1,0 +1,51 @@
+.contact-edit {
+
+    display: flex;
+    justify-content: center;
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 25%;
+    }
+
+    input {
+        width: 100%;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    label {
+        margin-block-end: 20px;
+        margin-block-start: 20px;
+    }
+
+    .btn-primary {
+        margin-top: 15px;
+        margin-inline-end: 10px;
+        background-color: transparent;
+        color: #ffffff;
+        font-size: 1rem;
+        border: none;
+        border: 1px solid #ffffff;
+        border-radius: 4px;
+        padding: 5px 10px;
+
+        &:hover{
+            transform: scale(1.03);
+        }
+    }
+
+    .img-container {
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+        img {
+            width: 80%;
+        }
+    }
+}

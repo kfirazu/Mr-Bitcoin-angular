@@ -22,7 +22,7 @@ export class ContactEditComponent implements OnInit {
   paramsSubscription!: Subscription
 
   ngOnInit(): void {
-    this.route.data.subscribe(({ contact}) => {
+    this.route.data.subscribe(({ contact }) => {
       this.contact = contact || this.contactService.getEmptyContact() as Contact
     })
   }

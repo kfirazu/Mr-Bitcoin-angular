@@ -1,7 +1,8 @@
-<section class="singup">
+<section class="signup">
     <form (ngSubmit)="onSubmit(form)" #form="ngForm">
-        <Label for="username">Username</Label>
+        <h2>Signup</h2>
+        <Label for="username"></Label>
         <input [(ngModel)]="username" type="text" name="username" id="username" placeholder="Enter username">
-        <button>Signup</button>
+        <button class="btn btn-signup">Signup</button>
     </form>
 </section>

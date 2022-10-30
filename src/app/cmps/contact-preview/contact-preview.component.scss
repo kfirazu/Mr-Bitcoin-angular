@@ -3,22 +3,46 @@
     align-items: center;
     justify-content: space-between;
     margin-block-end: 10px;
-    width: 1000px;
+    width: 100%;
+    cursor: pointer;
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 15px;
+  
+    &:hover {
+        transform: scale(1.08);
+    }
 
     .info-container {
         display: flex;
         padding-top: 10px;
         margin-inline-start: 20px;
 
-        .info{
+        .info {
             font-size: 20px;
-            margin-inline-end: 20px;
+            margin-inline-end: 30px;
         }
     }
-    
+
+    .actions-container {
+        margin-inline-start: 100px;
+
+        .btn-primary {
+            margin-inline-end: 10px;
+            background-color: transparent;
+            color: #ffffff;
+            font-size: 1rem;
+            border: none;
+
+        }
+    }
+
+
     img {
         width: 60px;
         height: 60px;
         border-radius: 50%;
+        margin-inline-end: 30px;
     }
+
+
 }

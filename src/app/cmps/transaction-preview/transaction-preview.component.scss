@@ -1,0 +1,15 @@
+.transactions-preview {
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    padding-block-end: 15px;
+    border-bottom: 1px #fff solid;
+    width: 100%;
+    // height: 60px;
+    margin-block-end: 30px;
+
+    span {
+       margin-inline-end: 10px;
+       letter-spacing: 0.3px;
+    }
+}

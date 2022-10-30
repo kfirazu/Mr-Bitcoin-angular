@@ -1,0 +1,8 @@
+<section class="transaction-list">
+    <ul>
+        <li *ngFor="let transaction of transactions">
+            <transaction-preview [transaction]="transaction"></transaction-preview>
+        </li>
+    </ul>
+
+</section>

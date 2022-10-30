@@ -1,11 +1,12 @@
-<header class="app-header">
-    <span class="logo">
-        <a routerLink="/"> Mr-Bitcoin</a></span>
+<header class="full app-header">
+    <span>
+        <a class="logo" routerLink="/"> Mr-Bitcoin</a>
+    </span>
     <nav class="links-container">
-        <a routerLink="/" >Home</a>
-        <a routerLink="contact">Contacts</a>
-        <a routerLink="signup">Signup</a>
-        <a >Charts</a>
-        <a (click)="onLogout()">Logout</a>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+        <a routerLink="contact" routerLinkActive="active">Contacts</a>
+        <a routerLinkActive="active">Charts</a>
+        <a routerLink="signup" routerLinkActive="active">Signup</a>
+        <a class="btn-logout" (click)="onLogout()" routerLinkActive="active">Logout</a>
     </nav>
 </header>

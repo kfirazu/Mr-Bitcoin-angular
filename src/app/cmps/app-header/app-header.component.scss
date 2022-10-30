@@ -1,21 +1,35 @@
-.app-header{
+.app-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: rem(25px) 0 ;
-    margin-block-end: rem(25px);
-    background-color: blueviolet;
+    padding: 25px 0;
+    margin-block-end: 25px;
+    // background-color: blueviolet;
 
-    .logo{
-
+    .logo {
+        font-size: rem(40px);
 
     }
 
     .links-container {
+        font-size: 1rem;
 
-        a{
+        >*:not(:last-child) {
+            margin-inline-end: 1rem;
+            // padding: 10px;
+        }
 
+        .active{
+            text-underline-position: below;
+            text-decoration: underline;
+            color:  rgb(132, 132, 215);;
+        }
 
+        .btn-logout{
+            cursor: pointer;
         }
     }
+
+
+
 }

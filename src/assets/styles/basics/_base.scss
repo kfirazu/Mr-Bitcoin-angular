@@ -18,7 +18,7 @@ h4,
 h5,
 h6 {
     font-family: caveat;
-    margin: 0 0 0.6em;
+    // margin: 0 0 0.6em;
     line-height: 1;
     font-weight: 400;
 }
@@ -34,6 +34,7 @@ p {
 a {
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
 }
 
 ul {
@@ -46,7 +47,7 @@ button.btn {
     // display: flex;
     align-items: center;
     transition: background-color .2s;
-    // border: none;
+    border: none;
 
     &:hover {
         cursor: pointer;

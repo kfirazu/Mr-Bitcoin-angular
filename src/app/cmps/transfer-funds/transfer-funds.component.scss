@@ -1,0 +1,33 @@
+.transfer-funds {
+    margin-block-end: 20px;
+    input {
+        width: 80px;
+        background-color: transparent;
+        color: #ffffff;
+        outline-color: #ffffff;
+        border-color: #ffffff;
+        border-radius: 4px;
+        padding: 4px 6px;
+        margin-inline-end: 10px;
+   
+
+        &:focus-visible {
+            outline: 0;
+        }
+    }
+
+    .btn-transfer {
+        margin-inline-start: 20px;
+        color: #ffffff;
+        background-color: transparent;
+        padding: 5px 6px;
+        font-size: 1rem;
+        border-radius: 4px;
+
+        border: 1px solid #ffffff;
+
+        &:hover {
+            transform: scale(1.03);
+        }
+    }
+}

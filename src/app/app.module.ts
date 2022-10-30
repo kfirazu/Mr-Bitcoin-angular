@@ -15,6 +15,10 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { TransferFundsComponent } from './cmps/transfer-funds/transfer-funds.component';
+import { TransactionListComponent } from './cmps/transaction-list/transaction-list.component';
+import { TransactionPreviewComponent } from './cmps/transaction-preview/transaction-preview.component';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -27,14 +31,18 @@ import { SignupComponent } from './pages/signup/signup.component';
     HomePageComponent,
     ContactComponent,
     AppHeaderComponent,
-    SignupComponent
+    SignupComponent,
+    TransferFundsComponent,
+    TransactionListComponent,
+    TransactionPreviewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     GoogleChartsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgChartsModule
 
 
   ],
