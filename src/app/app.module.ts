@@ -20,6 +20,7 @@ import { TransactionListComponent } from './cmps/transaction-list/transaction-li
 import { TransactionPreviewComponent } from './cmps/transaction-preview/transaction-preview.component';
 import { NgChartsModule } from 'ng2-charts';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ChartComponent } from './cmps/chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     TransferFundsComponent,
     TransactionListComponent,
     TransactionPreviewComponent,
-    DashboardComponent
+    DashboardComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
