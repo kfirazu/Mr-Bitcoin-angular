@@ -7,7 +7,7 @@
     // background-color: blueviolet;
 
     .logo {
-        font-size: rem(40px);
+        font-size: 25px;
 
     }
 
@@ -16,16 +16,22 @@
 
         >*:not(:last-child) {
             margin-inline-end: 1rem;
-            // padding: 10px;
+            padding: 8px;
+            border-radius: 4px;
+
+            &:hover {
+                background-color: rgba(240, 242, 247, 0.1);
+
+            }
         }
 
-        .active{
+        .active {
             text-underline-position: below;
             text-decoration: underline;
-            color:  rgb(132, 132, 215);;
+            color: rgb(132, 132, 215);
         }
 
-        .btn-logout{
+        .btn-logout {
             cursor: pointer;
         }
     }

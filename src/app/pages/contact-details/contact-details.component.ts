@@ -27,7 +27,6 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
 
   async ngOnInit(): Promise<void> {
     this.paramsSubscription = this.route.data.subscribe(data => {
-      console.log('data:', data)
       const contact = data['contact']
       if (contact) this.contact = contact
     })
