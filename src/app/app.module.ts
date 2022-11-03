@@ -19,6 +19,8 @@ import { TransferFundsComponent } from './cmps/transfer-funds/transfer-funds.com
 import { TransactionListComponent } from './cmps/transaction-list/transaction-list.component';
 import { TransactionPreviewComponent } from './cmps/transaction-preview/transaction-preview.component';
 import { NgChartsModule } from 'ng2-charts';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ChartComponent } from './cmps/chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { NgChartsModule } from 'ng2-charts';
     SignupComponent,
     TransferFundsComponent,
     TransactionListComponent,
-    TransactionPreviewComponent
+    TransactionPreviewComponent,
+    DashboardComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,

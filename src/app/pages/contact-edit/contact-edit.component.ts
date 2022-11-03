@@ -22,9 +22,15 @@ export class ContactEditComponent implements OnInit {
   paramsSubscription!: Subscription
 
   ngOnInit(): void {
-    this.route.data.subscribe(({ contact }) => {
+    this.paramsSubscription = this.route.data.subscribe(({ contact }) => {
       this.contact = contact || this.contactService.getEmptyContact() as Contact
     })
+
+    // this.paramsSubscription = this.route.data.subscribe(data => {
+    //   const contact = data['contact']
+    //   if(contact) this.contact = contact
+    //   else this.contact = this.contactService.getEmptyContact() as Contact
+    // })
   }
 
   // ngOnInit(): void {
@@ -39,15 +45,19 @@ export class ContactEditComponent implements OnInit {
   // }
 
   async onSaveContact() {
-    await lastValueFrom(this.contactService.saveContact(this.contact))
+    await (this.contactService.saveContact(this.contact))
     this.router.navigateByUrl('/contact')
+  }
 
-
+  onBack() {
+    this.router.navigate(['/contact'])
   }
 
   ngOnDestroy(): void {
     this.paramsSubscription.unsubscribe()
   }
+
+
 
 
 }

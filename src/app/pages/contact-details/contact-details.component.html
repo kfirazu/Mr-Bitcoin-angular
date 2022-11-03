@@ -8,8 +8,8 @@
     <transaction-list [transactions]="transactions"></transaction-list>
     <transfer-funds [contact]="contact"></transfer-funds>
     <div class="actions">
-        <button class="btn btn-back" (click)="onBack()">Back</button>
         <button class="btn btn-remove" (click)="onRemoveContact(contact._id!)">Delete</button>
         <button (click)="onEditContact($event)" class="btn btn-primary">Edit</button>
     </div>
+    <button class="btn btn-back" (click)="onBack()">Back</button>
 </section>

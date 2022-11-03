@@ -1,4 +1,14 @@
 .contact {
     display: flex;
     flex-direction: column;
+
+    .btn-add {
+        margin: 0 auto;
+        margin-top: 25px;
+        padding: 8px;
+
+        &:hover {
+            background-color: rgba(240, 242, 247, 0.1);
+        }
+    }
 }

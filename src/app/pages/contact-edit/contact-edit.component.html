@@ -1,13 +1,17 @@
 <section class="contact-edit">
+    <button class="btn btn-back" (click)="onBack()">Back</button>
+    <div *ngIf="contact._id" class="img-container">
+        <img src="https://joeschmoe.io/api/v1/${{contact._id}}@ashallendesign.co.uk" />
+    </div>
     <form (ngSubmit)="onSaveContact()">
         <label for="name">Name</label>
-        <input [(ngModel)]="contact.name" name="name" type="text" id="name"> 
+        <input [(ngModel)]="contact.name" name="name" type="text" id="name">
 
         <label for="email">Email</label>
-        <input [(ngModel)]="contact.email" name="email" required type="email" id="email"> 
+        <input [(ngModel)]="contact.email" name="email" required type="email" id="email">
 
         <label for="phone">Phone</label>
-        <input [(ngModel)]="contact.phone" name="phone" type="number" id="phone"> 
+        <input [(ngModel)]="contact.phone" name="phone" type="text" id="phone">
         <button class="btn btn-primary">Save</button>
     </form>
     <div *ngIf="!contact._id" class="img-container">

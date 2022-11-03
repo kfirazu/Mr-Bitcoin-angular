@@ -38,11 +38,24 @@
             }
 
         }
+
     }
 
-    // .btn-back {
-    //     border: 1px solid #fff;
-    //     padding: 5px 10px;
-    // }
+    .btn-back {
+        margin-inline-end: 10px;
+        padding: 5px 8px;
+        border: .5px #fff solid;
+        border-radius: 4px;
+        background-color: transparent;
+        color: #ffffff;
+        font-size: 1rem;
+        position: absolute;
+        left: 50px;
+        top: 100px;
+
+        &:hover {
+            transform: scale(1.03);
+        }
+    }
 
 }
