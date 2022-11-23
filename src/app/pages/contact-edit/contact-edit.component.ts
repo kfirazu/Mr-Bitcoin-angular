@@ -46,18 +46,18 @@ export class ContactEditComponent implements OnInit {
 
   async onSaveContact() {
     await (this.contactService.saveContact(this.contact))
-    this.router.navigateByUrl('/contact')
+    this.contact._id
+    ? this.router.navigateByUrl(`/contact/${this.contact._id}`)
+    : this.router.navigateByUrl('/contact')
   }
 
   onBack() {
-    this.router.navigate(['/contact'])
+    this.contact._id
+      ? this.router.navigateByUrl(`/contact/${this.contact._id}`)
+      : this.router.navigate(['/contact'])
   }
 
   ngOnDestroy(): void {
     this.paramsSubscription.unsubscribe()
   }
-
-
-
-
 }

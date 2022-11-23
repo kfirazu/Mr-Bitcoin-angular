@@ -1,3 +1,4 @@
+import { formatCurrency } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Contact } from 'src/app/models/contact.model';
 import { UserService } from '../../services/user.service';
@@ -16,9 +17,9 @@ export class TransferFundsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  onTransferFunds(){
-    this.userService.transferFunds(this.amount, this.contact)
+  //Bug to fix: when clicking transfer- transfer list& preview renders only after refresh
+  onTransferFunds(amount: number){
+    this.userService.transferFunds(amount, this.contact)
     this.amount = 0
   }
 

@@ -1,13 +1,13 @@
 .contact-preview {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     margin-block-end: 10px;
     width: 100%;
     cursor: pointer;
     border-bottom: 1px solid #ffffff;
     padding-bottom: 15px;
-  
+
+
     &:hover {
         transform: scale(1.08);
     }
@@ -15,16 +15,11 @@
     .info-container {
         display: flex;
         padding-top: 10px;
-        margin-inline-start: 20px;
-
-        .info {
-            font-size: 20px;
-            margin-inline-end: 30px;
-        }
+        align-items: center;
     }
 
     .actions-container {
-        margin-inline-start: 100px;
+        // margin-inline-start: 100px;
 
         .btn-primary {
             margin-inline-end: 10px;
@@ -43,7 +38,6 @@
         }
     }
 
-
     img {
         width: 60px;
         height: 60px;
@@ -51,5 +45,109 @@
         margin-inline-end: 30px;
     }
 
+}
 
+@media (max-width: 520px) {
+    .contact-preview {
+        width: 350px;
+
+        .info-container {
+         
+            flex-basis: 100%;
+            margin-inline-start: 10px;
+            align-items: center;
+
+            .phone {
+                display: none;
+            }
+        }
+
+        .actions-container {
+            >* {
+                display: none
+            }
+        }
+
+        img {
+            margin-inline-end: 20%;
+
+        }
+    }
+}
+
+@media (min-width: 521px) {
+    .contact-preview {
+        .info-container {
+            // padding-top: 10px;
+            margin-inline-start: 20px;
+
+            .name {
+                font-size: 20px;
+                margin-inline-end: 30px;
+            }
+            .phone {
+                display: none;
+            }
+
+        }
+
+        .actions-container {
+            >*:not(:first-child) {
+                display: none
+            }
+            margin-inline-start: 80px;
+
+        }
+    }
+}
+
+@media (min-width: 720px) {
+    .contact-preview {
+        .info-container {
+            margin-inline-start: 20px;
+
+            .name {
+                font-size: 20px;
+                margin-inline-end: 30px;
+            }
+            .phone {
+                display: none;
+            }
+
+        }
+
+        .actions-container {
+            >*:not(:first-child) {
+                display: inline-block
+            }
+            margin-inline-start: 100px;
+
+        }
+    }
+}
+
+@media (min-width: 920px) {
+    .contact-preview {
+        justify-content: space-between;
+        flex-basis: 100%;
+        // width: 100%;
+
+        .info-container {
+            // padding-top: 10px;
+            margin-inline-start: 20px;
+
+            .name,
+            .phone {
+                display: inline-block;
+                font-size: 20px;
+                margin-inline-end: 30px;
+            }
+
+        }
+
+        .actions-container {
+            margin-inline-start: 100px;
+
+        }
+    }
 }

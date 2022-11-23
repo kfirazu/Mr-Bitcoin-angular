@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject, of, throwError } from 'rxjs';
 import { Contact } from '../models/contact.model';
 import { ContactFilter } from 'src/app/models/contact.model';
+import { StorageService } from './storage.service';
 
 const CONTACTS = [
     {
@@ -132,10 +133,10 @@ export class ContactService {
     private _contacts$ = new BehaviorSubject<Contact[]>([])
     public contacts$ = this._contacts$.asObservable()
 
-    private _filterBy$ = new BehaviorSubject<ContactFilter>({ term : '' })
+    private _filterBy$ = new BehaviorSubject<ContactFilter>({ term: '' })
     public filterBy$ = this._filterBy$.asObservable()
 
-    constructor() {
+    constructor(private storageService: StorageService) {
     }
 
 
@@ -161,13 +162,15 @@ export class ContactService {
     public deleteContact(id: string) {
         //mock the server work
         this._contactsDb = this._contactsDb.filter(contact => contact._id !== id)
-
+        this.storageService.saveToStorage('contacts', this._contactsDb)
         // change the observable data in the service - let all the subscribers know
         this._contacts$.next(this._contactsDb)
     }
 
     public saveContact(contact: Contact): any {
-        return contact._id ? this._updateContact(contact) : this._addContact(contact)
+        return contact._id
+            ? this._updateContact(contact)
+            : this._addContact(contact)
     }
 
     private _updateContact(contact: Contact) {
@@ -175,6 +178,7 @@ export class ContactService {
         this._contactsDb = this._contactsDb.map(c => contact._id === c._id ? contact : c)
         // change the observable data in the service - let all the subscribers know
         this._contacts$.next(this._sort(this._contactsDb))
+        this.storageService.saveToStorage('contacts', this._contactsDb)
     }
 
     private _addContact(contact: Contact) {
@@ -198,11 +202,11 @@ export class ContactService {
         })
     }
 
-    public getEmptyContact(){
-        return {name: '', email: '', phone: ''}
+    public getEmptyContact() {
+        return { name: '', email: '', phone: '' }
     }
 
-    public setFilter(filterBy: ContactFilter){
+    public setFilter(filterBy: ContactFilter) {
         this._filterBy$.next(filterBy)
         this.loadContacts()
     }
@@ -215,14 +219,14 @@ export class ContactService {
                 contact.email.toLocaleLowerCase().includes(term)
         })
     }
-    
+
 
     public getRandomId(length = 8): string {
         let result = '';
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         for (var i = 0; i < length; i++) {
             result += characters.charAt(Math.floor(Math.random() *
-            characters.length));
+                characters.length));
         }
         return result;
     }

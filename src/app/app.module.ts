@@ -12,7 +12,7 @@ import { ContactDetailsComponent } from './pages/contact-details/contact-details
 import { ContactEditComponent } from './pages/contact-edit/contact-edit.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { TransferFundsComponent } from './cmps/transfer-funds/transfer-funds.component';
@@ -46,6 +46,7 @@ import { ChartComponent } from './cmps/chart/chart.component';
     GoogleChartsModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     NgChartsModule
 
 

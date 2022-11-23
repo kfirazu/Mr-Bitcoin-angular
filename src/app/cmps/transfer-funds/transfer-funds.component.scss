@@ -1,15 +1,26 @@
 .transfer-funds {
-    margin-block-end: 20px;
+    margin-block-end: 15px;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .input-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     input {
-        width: 80px;
         background-color: transparent;
         color: #ffffff;
         outline-color: #ffffff;
         border-color: #ffffff;
         border-radius: 4px;
-        padding: 4px 6px;
+        padding: 6px 6px;
         margin-inline-end: 10px;
-   
+        width: 180px;
 
         &:focus-visible {
             outline: 0;
@@ -17,17 +28,24 @@
     }
 
     .btn-transfer {
-        margin-inline-start: 20px;
+        // margin-inline-start: 20px;
         color: #ffffff;
         background-color: transparent;
         padding: 5px 6px;
         font-size: 1rem;
         border-radius: 4px;
-
+        width: 80px;
+        margin-block-start: 15px;
         border: 1px solid #ffffff;
 
         &:hover {
             transform: scale(1.03);
         }
+    }
+
+    .errors {
+        color: rgb(156, 47, 47);
+        margin-block-end: 10px;
+        margin-block-start: 10px;
     }
 }

@@ -1,8 +1,8 @@
 <section [routerLink]="['/contact', contact._id]" class="contact-preview">
     <div class="info-container">
         <img src="https://joeschmoe.io/api/v1/${{contact._id}}@ashallendesign.co.uk" />
-        <h2 class="info">{{ contact.name }}</h2>
-        <h2 class="info">{{ contact.phone }}</h2>
+        <h2 class="name">{{ contact.name }}</h2>
+        <h2 class="phone">{{ contact.phone }}</h2>
     </div>
     <div class="actions-container">
         <button class="btn btn-primary">Details</button>

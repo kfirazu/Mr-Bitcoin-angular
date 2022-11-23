@@ -1,8 +1,15 @@
 <section class="signup">
+    <div class="sign-up-form">
+    <pre>Sign up and transfer Crypto directly
+    and securely with Mr-Bitcoin
+    </pre>
     <form (ngSubmit)="onSubmit(form)" #form="ngForm">
-        <h2>Signup</h2>
         <Label for="username"></Label>
         <input [(ngModel)]="username" type="text" name="username" id="username" placeholder="Enter username">
         <button class="btn btn-signup">Signup</button>
     </form>
+</div>
+<div class="img-container">
+    <img src="../../../assets/imgs/signup.jpg" alt="bitcoin-img">
+</div>
 </section>
